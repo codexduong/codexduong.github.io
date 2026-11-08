@@ -24,401 +24,16 @@
             content="Studio phần mềm độc lập tại Việt Nam."
         />
         <meta property="og:type" content="website" />
-        <style>
-            :root {
-                --bg: #fafaf8;
-                --surface: #ffffff;
-                --ink: #1b1e1a;
-                --muted: #6a7068;
-                --line: #e6e8e1;
-                --accent: #3f5a46;
-                --accent-soft: #eef3ee;
-                --radius: 14px;
-                --w: 880px;
-            }
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --bg: #121512;
-                    --surface: #181c18;
-                    --ink: #eceeea;
-                    --muted: #98a095;
-                    --line: #262b25;
-                    --accent: #9db8a3;
-                    --accent-soft: #1c241d;
-                }
-            }
-            * {
-                box-sizing: border-box;
-            }
-            html {
-                scroll-behavior: smooth;
-            }
-            body {
-                margin: 0;
-                background: var(--bg);
-                color: var(--ink);
-                font:
-                    16px/1.7 Inter,
-                    ui-sans-serif,
-                    system-ui,
-                    -apple-system,
-                    "Segoe UI",
-                    Roboto,
-                    sans-serif;
-                -webkit-font-smoothing: antialiased;
-            }
-            a {
-                color: inherit;
-                text-underline-offset: 3px;
-            }
-            a:hover {
-                color: var(--accent);
-            }
-            :focus-visible {
-                outline: 2px solid var(--accent);
-                outline-offset: 3px;
-                border-radius: 4px;
-            }
-            .wrap {
-                width: min(var(--w), calc(100% - 40px));
-                margin: 0 auto;
-            }
-
-            /* Header */
-            header {
-                position: sticky;
-                top: 0;
-                z-index: 10;
-                background: color-mix(in srgb, var(--bg) 85%, transparent);
-                backdrop-filter: blur(10px);
-                border-bottom: 1px solid var(--line);
-            }
-            .nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 60px;
-                gap: 20px;
-            }
-            .brand {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                font-weight: 650;
-                letter-spacing: -0.01em;
-                text-decoration: none;
-            }
-            .logo {
-                width: 26px;
-                height: 26px;
-                border-radius: 7px;
-                background: var(--accent);
-                color: var(--bg);
-                display: grid;
-                place-items: center;
-                font-size: 13px;
-                font-weight: 700;
-            }
-            .nav nav {
-                display: flex;
-                gap: 24px;
-                font-size: 14px;
-                color: var(--muted);
-            }
-            .nav nav a {
-                text-decoration: none;
-            }
-
-            /* Hero */
-            .hero {
-                padding: 96px 0 80px;
-            }
-            .eyebrow {
-                color: var(--accent);
-                font-size: 13px;
-                font-weight: 650;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
-            }
-            h1 {
-                margin: 16px 0 20px;
-                font-size: clamp(36px, 6.5vw, 60px);
-                line-height: 1.07;
-                letter-spacing: -0.045em;
-                font-weight: 620;
-                max-width: 700px;
-            }
-            .lead {
-                margin: 0;
-                max-width: 580px;
-                color: var(--muted);
-                font-size: 18px;
-            }
-            .cta {
-                margin-top: 32px;
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-            }
-            .btn {
-                display: inline-flex;
-                align-items: center;
-                min-height: 44px;
-                padding: 0 20px;
-                border-radius: 999px;
-                font-size: 14px;
-                font-weight: 600;
-                text-decoration: none;
-                border: 1px solid var(--line);
-                background: var(--surface);
-            }
-            .btn.primary {
-                background: var(--ink);
-                color: var(--bg);
-                border-color: var(--ink);
-            }
-            .btn.primary:hover {
-                color: var(--bg);
-                opacity: 0.88;
-            }
-            .btn:not(.primary):hover {
-                border-color: var(--accent);
-            }
-
-            /* Sections */
-            section {
-                padding: 64px 0;
-                border-top: 1px solid var(--line);
-                scroll-margin-top: 60px;
-            }
-            .head {
-                margin-bottom: 32px;
-            }
-            .label {
-                color: var(--muted);
-                font-size: 12px;
-                font-weight: 650;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-            }
-            h2 {
-                margin: 8px 0 0;
-                font-size: clamp(24px, 3.6vw, 32px);
-                line-height: 1.2;
-                letter-spacing: -0.03em;
-                font-weight: 600;
-            }
-            .sub {
-                margin: 12px 0 0;
-                max-width: 600px;
-                color: var(--muted);
-            }
-            p {
-                margin: 0 0 14px;
-            }
-
-            /* Values */
-            .values {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-                margin-top: 36px;
-            }
-            .value {
-                padding-top: 18px;
-                border-top: 2px solid var(--accent);
-            }
-            .value strong {
-                display: block;
-                margin-bottom: 6px;
-            }
-            .value span {
-                color: var(--muted);
-                font-size: 14px;
-            }
-
-            /* Products — thêm sản phẩm mới bằng cách sao chép một khối <article class="app"> */
-            .apps {
-                display: grid;
-                gap: 14px;
-            }
-            .app {
-                display: grid;
-                grid-template-columns: 56px 1fr auto;
-                gap: 20px;
-                align-items: start;
-                padding: 24px;
-                background: var(--surface);
-                border: 1px solid var(--line);
-                border-radius: var(--radius);
-                transition: border-color 0.15s;
-            }
-            .app:hover {
-                border-color: color-mix(
-                    in srgb,
-                    var(--accent) 45%,
-                    var(--line)
-                );
-            }
-            .icon {
-                width: 56px;
-                height: 56px;
-                border-radius: 14px;
-                background: var(--accent-soft);
-                color: var(--accent);
-                display: grid;
-                place-items: center;
-                font-size: 22px;
-                font-weight: 700;
-                letter-spacing: -0.03em;
-            }
-            .app h3 {
-                margin: 0;
-                font-size: 19px;
-                letter-spacing: -0.02em;
-                font-weight: 600;
-            }
-            .meta {
-                display: flex;
-                gap: 8px;
-                flex-wrap: wrap;
-                margin: 8px 0 10px;
-            }
-            .badge {
-                padding: 2px 10px;
-                border-radius: 999px;
-                font-size: 12px;
-                font-weight: 600;
-                color: var(--accent);
-                background: var(--accent-soft);
-            }
-            .badge.plain {
-                color: var(--muted);
-                background: transparent;
-                border: 1px solid var(--line);
-            }
-            .app p {
-                margin: 0;
-                color: var(--muted);
-                font-size: 15px;
-                max-width: 520px;
-            }
-            .links {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                align-items: flex-end;
-                font-size: 14px;
-            }
-            .links a {
-                color: var(--accent);
-                text-decoration: none;
-                white-space: nowrap;
-            }
-            .links a:hover {
-                text-decoration: underline;
-            }
-
-            /* Contact */
-            .contact {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-            .contact div {
-                padding: 20px 0;
-                border-top: 1px solid var(--line);
-            }
-            .contact dt {
-                color: var(--muted);
-                font-size: 13px;
-                margin-bottom: 4px;
-            }
-            .contact dd {
-                margin: 0;
-                font-size: 15px;
-            }
-            dl {
-                margin: 0;
-            }
-
-            /* Footer */
-            footer {
-                border-top: 1px solid var(--line);
-                padding: 32px 0 48px;
-                color: var(--muted);
-                font-size: 13px;
-            }
-            .foot {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 14px;
-            }
-            .foot div {
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            footer a {
-                text-decoration: none;
-            }
-
-            @media (max-width: 680px) {
-                .nav nav {
-                    gap: 16px;
-                }
-                .hero {
-                    padding: 64px 0 56px;
-                }
-                section {
-                    padding: 48px 0;
-                }
-                .values,
-                .contact {
-                    grid-template-columns: 1fr;
-                    gap: 8px;
-                }
-                .values {
-                    gap: 20px;
-                }
-                .app {
-                    grid-template-columns: 48px 1fr;
-                    padding: 20px;
-                    gap: 16px;
-                }
-                .icon {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 12px;
-                    font-size: 19px;
-                }
-                .links {
-                    grid-column: 1 / -1;
-                    flex-direction: row;
-                    gap: 18px;
-                    align-items: flex-start;
-                    flex-wrap: wrap;
-                }
-            }
-            @media (prefers-reduced-motion: reduce) {
-                html {
-                    scroll-behavior: auto;
-                }
-                * {
-                    transition: none !important;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="/assets/css/style.css" />
     </head>
     <body>
-        <header>
+        <header class="site-header">
             <div class="wrap nav">
-                <a class="brand" href="#top"
+                <a class="brand" href="/"
                     ><span class="logo" aria-hidden="true">D</span>Dương Nguyễn
                     SoftLab</a
                 >
-                <nav aria-label="Điều hướng chính">
+                <nav class="nav-links" aria-label="Điều hướng chính">
                     <a href="#about">Giới thiệu</a>
                     <a href="#products">Sản phẩm</a>
                     <a href="#contact">Liên hệ</a>
@@ -426,7 +41,7 @@
             </div>
         </header>
 
-        <main id="top">
+        <main>
             <div class="wrap">
                 <div class="hero">
                     <div class="eyebrow">
@@ -491,10 +106,10 @@
                     </div>
                     <div class="apps">
                         <article class="app">
-                            <div class="icon" aria-hidden="true">OC</div>
+                            <div class="app-icon" aria-hidden="true">OC</div>
                             <div>
                                 <h3>Ok Cân</h3>
-                                <div class="meta">
+                                <div class="app-meta">
                                     <span class="badge">Android</span>
                                     <span class="badge plain"
                                         >Đang phát triển</span
@@ -507,11 +122,11 @@
                                     tiện, rõ ràng.
                                 </p>
                             </div>
-                            <div class="links">
+                            <div class="app-links">
                                 <a href="/privacy/ok-can.html"
                                     >Chính sách quyền riêng tư</a
                                 >
-                                <!-- Khi đã phát hành, thêm: <a href="LINK_GOOGLE_PLAY">Google Play</a> -->
+                                <!-- thêm: <a href="LINK_GOOGLE_PLAY">Google Play</a> -->
                             </div>
                         </article>
                     </div>
@@ -550,7 +165,7 @@
             </section>
         </main>
 
-        <footer>
+        <footer class="site-footer">
             <div class="wrap foot">
                 <span
                     >© <span id="year">2026</span> Dương Nguyễn SoftLab. Bảo lưu
