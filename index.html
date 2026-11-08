@@ -3,23 +3,25 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Dương Nguyễn Software Lab</title>
         <meta
             name="description"
-            content="Dương Nguyễn SoftLab — phát triển phần mềm độc lập, tập trung vào những công cụ hữu ích và dễ sử dụng."
+            content="Dương Nguyễn SoftLab — nhà phát triển phần mềm độc lập tại Việt Nam, xây dựng các ứng dụng đơn giản, ổn định và dễ sử dụng."
         />
-        <meta name="theme-color" content="#f7f7f4" />
-        <title>Dương Nguyễn Software Lab</title>
+        <meta name="theme-color" content="#fafaf8" />
+        <meta property="og:title" content="Dương Nguyễn SoftLab" />
+        <meta
+            property="og:description"
+            content="Nhà phát triển phần mềm độc lập tại Việt Nam."
+        />
+        <meta property="og:type" content="website" />
         <style>
             :root {
-                color-scheme: light;
-                --bg: #f7f7f4;
-                --surface: #fff;
-                --ink: #20231f;
-                --muted: #70766e;
-                --line: #e6e8e1;
-                --accent: #526b58;
-                --accent-soft: #edf2ec;
-                --max: 1080px;
+                --bg: #fafaf8;
+                --ink: #1d201c;
+                --muted: #6b716a;
+                --line: #e7e8e2;
+                --accent: #3f5a46;
             }
             * {
                 box-sizing: border-box;
@@ -32,259 +34,160 @@
                 background: var(--bg);
                 color: var(--ink);
                 font:
-                    16px/1.65 Inter,
+                    16px/1.7 Inter,
                     ui-sans-serif,
                     system-ui,
                     -apple-system,
-                    BlinkMacSystemFont,
                     "Segoe UI",
+                    Roboto,
                     sans-serif;
                 -webkit-font-smoothing: antialiased;
             }
             a {
                 color: inherit;
+                text-underline-offset: 3px;
+            }
+            a:hover {
+                color: var(--accent);
             }
             .wrap {
-                width: min(var(--max), calc(100% - 48px));
+                width: min(720px, calc(100% - 40px));
                 margin: 0 auto;
             }
+
             header {
                 padding: 28px 0;
-                border-bottom: 1px solid var(--line);
             }
             .nav {
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
-                gap: 24px;
+                align-items: baseline;
+                gap: 20px;
             }
             .brand {
-                font-size: 14px;
-                font-weight: 750;
-                letter-spacing: 0.09em;
-                text-transform: uppercase;
+                font-weight: 650;
+                letter-spacing: -0.01em;
                 text-decoration: none;
             }
-            .nav-links {
+            .nav nav {
                 display: flex;
-                gap: 24px;
-                color: var(--muted);
+                gap: 22px;
                 font-size: 14px;
+                color: var(--muted);
             }
-            .nav-links a {
+            .nav nav a {
                 text-decoration: none;
             }
-            .nav-links a:hover,
-            footer a:hover {
-                color: var(--accent);
-            }
+
             .hero {
-                padding: 104px 0 88px;
-                max-width: 820px;
-            }
-            .eyebrow {
-                color: var(--accent);
-                font-size: 12px;
-                font-weight: 750;
-                letter-spacing: 0.15em;
-                text-transform: uppercase;
+                padding: 88px 0 72px;
             }
             h1 {
-                margin: 18px 0 20px;
-                font-size: clamp(42px, 7vw, 76px);
-                line-height: 1.04;
-                letter-spacing: -0.055em;
-                font-weight: 650;
+                margin: 0 0 20px;
+                font-size: clamp(34px, 6vw, 52px);
+                line-height: 1.1;
+                letter-spacing: -0.04em;
+                font-weight: 600;
             }
             .lead {
-                max-width: 650px;
-                color: #5f665e;
-                font-size: clamp(18px, 2.2vw, 21px);
-                line-height: 1.6;
-            }
-            .hero-note {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                margin-top: 28px;
+                margin: 0;
+                max-width: 560px;
                 color: var(--muted);
-                font-size: 13px;
+                font-size: 18px;
             }
-            .dot {
-                width: 7px;
-                height: 7px;
-                border-radius: 50%;
-                background: #78927b;
-            }
+
             section {
-                padding: 66px 0;
+                padding: 48px 0;
                 border-top: 1px solid var(--line);
-            }
-            .section-head {
-                display: grid;
-                grid-template-columns: 220px 1fr;
-                gap: 36px;
-                margin-bottom: 32px;
-            }
-            .section-label {
-                color: var(--muted);
-                font-size: 13px;
-                font-weight: 700;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
             }
             h2 {
-                margin: 0;
-                font-size: clamp(27px, 4vw, 38px);
-                line-height: 1.2;
-                letter-spacing: -0.035em;
-                font-weight: 620;
-            }
-            .section-copy {
-                max-width: 690px;
-                margin: 14px 0 0;
-                color: var(--muted);
-            }
-            .project {
-                display: grid;
-                grid-template-columns: 1fr auto;
-                gap: 28px;
-                align-items: center;
-                padding: 30px;
-                background: var(--surface);
-                border: 1px solid var(--line);
-                border-radius: 18px;
-            }
-            .project-kicker {
-                color: var(--accent);
-                font-size: 12px;
-                font-weight: 750;
+                margin: 0 0 18px;
+                font-size: 13px;
+                font-weight: 650;
                 letter-spacing: 0.1em;
                 text-transform: uppercase;
-            }
-            h3 {
-                margin: 8px 0 8px;
-                font-size: 27px;
-                letter-spacing: -0.03em;
-            }
-            .project p {
-                max-width: 650px;
-                margin: 0;
                 color: var(--muted);
             }
-            .project-link {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                min-height: 44px;
-                padding: 0 17px;
-                border: 1px solid #cbd5ca;
-                border-radius: 999px;
-                color: var(--accent);
-                background: var(--accent-soft);
-                text-decoration: none;
-                font-size: 14px;
-                font-weight: 650;
-                white-space: nowrap;
+            p {
+                margin: 0 0 14px;
             }
-            .project-link:hover {
-                background: #e3ebe2;
+            p:last-child {
+                margin-bottom: 0;
             }
-            .principles {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 18px;
-            }
-            .principle {
-                padding: 22px 0;
-                border-top: 1px solid var(--line);
-            }
-            .principle strong {
-                display: block;
-                margin-bottom: 7px;
-                font-size: 16px;
-            }
-            .principle span {
-                color: var(--muted);
-                font-size: 14px;
-            }
-            .contact-box {
+
+            .product {
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items: flex-start;
                 gap: 24px;
-                padding: 28px 30px;
-                background: #202820;
-                color: #fff;
-                border-radius: 18px;
             }
-            .contact-box p {
-                margin: 5px 0 0;
-                color: #c3cbc1;
+            .product h3 {
+                margin: 0 0 4px;
+                font-size: 20px;
+                letter-spacing: -0.02em;
+                font-weight: 600;
+            }
+            .tag {
+                display: block;
+                margin-bottom: 10px;
+                color: var(--accent);
+                font-size: 13px;
+                font-weight: 600;
+            }
+            .product p {
+                color: var(--muted);
+                max-width: 480px;
+            }
+            .link {
+                font-size: 14px;
+                white-space: nowrap;
+                color: var(--accent);
+            }
+
+            dl {
+                margin: 0;
+                display: grid;
+                grid-template-columns: 120px 1fr;
+                gap: 10px 20px;
+            }
+            dt {
+                color: var(--muted);
                 font-size: 14px;
             }
-            .contact-box a {
-                color: #fff;
-                text-decoration: none;
-                border-bottom: 1px solid #8c9b8b;
-                padding-bottom: 3px;
-                white-space: nowrap;
+            dd {
+                margin: 0;
             }
+
             footer {
-                padding: 28px 0 40px;
+                padding: 32px 0 48px;
+                border-top: 1px solid var(--line);
                 color: var(--muted);
                 font-size: 13px;
             }
-            .footer-inner {
+            .foot {
                 display: flex;
                 justify-content: space-between;
-                gap: 18px;
                 flex-wrap: wrap;
+                gap: 12px;
             }
             footer a {
                 text-decoration: none;
             }
-            @media (max-width: 700px) {
-                .wrap {
-                    width: min(100% - 36px, var(--max));
-                }
-                header {
-                    padding: 20px 0;
-                }
-                .nav {
-                    align-items: flex-start;
-                    flex-direction: column;
-                    gap: 12px;
-                }
-                .nav-links {
-                    gap: 18px;
-                    flex-wrap: wrap;
-                }
+
+            @media (max-width: 560px) {
                 .hero {
-                    padding: 76px 0 66px;
+                    padding: 60px 0 48px;
                 }
-                section {
-                    padding: 50px 0;
-                }
-                .section-head {
-                    grid-template-columns: 1fr;
+                .product {
+                    flex-direction: column;
                     gap: 12px;
                 }
-                .project {
+                dl {
                     grid-template-columns: 1fr;
-                    padding: 24px;
+                    gap: 2px;
                 }
-                .project-link {
-                    justify-self: start;
-                }
-                .principles {
-                    grid-template-columns: 1fr;
-                    gap: 4px;
-                }
-                .contact-box {
-                    align-items: flex-start;
-                    flex-direction: column;
-                    padding: 24px;
+                dd {
+                    margin-bottom: 12px;
                 }
             }
         </style>
@@ -292,11 +195,8 @@
     <body>
         <header>
             <div class="wrap nav">
-                <a class="brand" href="#top"
-                    >Dương Nguyễn <span style="color: #788879">/</span> Software
-                    Lab</a
-                >
-                <nav class="nav-links" aria-label="Điều hướng chính">
+                <a class="brand" href="#top">Dương Nguyễn SoftLab</a>
+                <nav aria-label="Điều hướng chính">
                     <a href="#about">Giới thiệu</a>
                     <a href="#products">Sản phẩm</a>
                     <a href="#contact">Liên hệ</a>
@@ -307,101 +207,47 @@
         <main id="top">
             <div class="wrap">
                 <div class="hero">
-                    <div class="eyebrow">
-                        Independent software developer · Vietnam
-                    </div>
-                    <h1>Building useful<br />software.</h1>
+                    <h1>Phần mềm đơn giản,<br />giải quyết việc thật.</h1>
                     <p class="lead">
-                        Dương Nguyễn Software Lab là không gian phát triển các
-                        sản phẩm phần mềm độc lập, tập trung giải quyết những
-                        nhu cầu thực tế bằng công nghệ phù hợp, trải nghiệm rõ
-                        ràng và thiết kế tinh gọn.
+                        Dương Nguyễn Software Lab là studio phát triển phần mềm
+                        độc lập tại Việt Nam, tập trung vào những ứng dụng gọn
+                        nhẹ, ổn định và dễ sử dụng.
                     </p>
-                    <div class="hero-note">
-                        <span class="dot"></span> Đang phát triển và hoàn thiện
-                        các sản phẩm của riêng mình
-                    </div>
                 </div>
             </div>
 
             <section id="about">
                 <div class="wrap">
-                    <div class="section-head">
-                        <div class="section-label">01 / Giới thiệu</div>
-                        <div>
-                            <h2>
-                                Phần mềm hữu ích, bắt đầu từ những vấn đề thực
-                                tế.
-                            </h2>
-                            <p class="section-copy">
-                                Tôi là nhà phát triển phần mềm độc lập tại Việt
-                                Nam. Công việc hiện tại tập trung vào ứng dụng
-                                đa nền tảng, công cụ hỗ trợ công việc và những
-                                sản phẩm có giao diện đơn giản, dễ tiếp cận. Tôi
-                                quan tâm đến hiệu năng, tính ổn định, khả năng
-                                bảo trì và trải nghiệm trên nhiều cấu hình thiết
-                                bị.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="principles">
-                        <div class="principle">
-                            <strong>Thực tế</strong
-                            ><span
-                                >Ưu tiên giải quyết nhu cầu cụ thể thay vì thêm
-                                tính năng không cần thiết.</span
-                            >
-                        </div>
-                        <div class="principle">
-                            <strong>Tinh gọn</strong
-                            ><span
-                                >Thiết kế giao diện rõ ràng, dễ hiểu và tập
-                                trung vào công việc chính.</span
-                            >
-                        </div>
-                        <div class="principle">
-                            <strong>Bền vững</strong
-                            ><span
-                                >Chú trọng hiệu năng, độ tin cậy và khả năng
-                                phát triển lâu dài.</span
-                            >
-                        </div>
-                    </div>
+                    <h2>Giới thiệu</h2>
+                    <p>
+                        Tôi là Dương Nguyễn, nhà phát triển phần mềm độc lập.
+                        Tôi xây dựng ứng dụng di động và đa nền tảng cho các nhu
+                        cầu thực tế, ưu tiên giao diện rõ ràng, hiệu năng tốt và
+                        chạy ổn định trên nhiều cấu hình thiết bị.
+                    </p>
+                    <p>
+                        Mỗi sản phẩm được thiết kế để làm tốt một việc chính,
+                        tôn trọng dữ liệu của người dùng và dễ bảo trì lâu dài.
+                    </p>
                 </div>
             </section>
 
             <section id="products">
                 <div class="wrap">
-                    <div class="section-head">
-                        <div class="section-label">02 / Sản phẩm</div>
+                    <h2>Sản phẩm</h2>
+                    <article class="product">
                         <div>
-                            <h2>Những dự án đang được xây dựng.</h2>
-                            <p class="section-copy">
-                                Một số sản phẩm trong quá trình phát triển.
-                                Thông tin và liên kết sẽ được cập nhật khi sản
-                                phẩm sẵn sàng ra mắt.
-                            </p>
-                        </div>
-                    </div>
-                    <article class="project">
-                        <div>
-                            <div class="project-kicker">
-                                Ứng dụng Android · Đang phát triển
-                            </div>
+                            <span class="tag">Ứng dụng Android</span>
                             <h3>Ok Cân</h3>
                             <p>
-                                Ứng dụng hỗ trợ ghi chép và quản lý thông tin
-                                các phiên cân, chi tiết cân và giao dịch mua bán
-                                lúa, hướng đến quy trình làm việc thuận tiện, rõ
-                                ràng cho người thu mua và cơ sở kinh doanh.
+                                Ứng dụng ghi chép và quản lý các phiên cân, chi
+                                tiết cân và giao dịch mua bán lúa, giúp người
+                                thu mua và cơ sở kinh doanh theo dõi công việc
+                                thuận tiện và rõ ràng hơn.
                             </p>
                         </div>
-                        <!-- TODO: Thay # bằng URL chính sách quyền riêng tư Ok Cân sau khi xuất bản trang chính sách. -->
-                        <a
-                            class="project-link"
-                            href="/privacy/ok-can.html"
-                            aria-label="Chính sách quyền riêng tư Ok Cân"
-                            >Chính sách quyền riêng tư ↗</a
+                        <a class="link" href="/privacy/ok-can.html"
+                            >Chính sách quyền riêng tư →</a
                         >
                     </article>
                 </div>
@@ -409,36 +255,34 @@
 
             <section id="contact">
                 <div class="wrap">
-                    <div class="section-head">
-                        <div class="section-label">03 / Liên hệ</div>
-                        <div>
-                            <h2>Kết nối về sản phẩm và hỗ trợ.</h2>
-                            <p class="section-copy">
-                                Nếu cần trao đổi về ứng dụng, hợp tác hoặc hỗ
-                                trợ kỹ thuật, vui lòng liên hệ qua email.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contact-box">
-                        <div>
-                            <strong>Dương Nguyễn Software Lab</strong>
-                            <p>Independent software development · Vietnam</p>
-                        </div>
-                        <!-- TODO: Thay địa chỉ email mẫu bên dưới bằng email liên hệ mà bạn muốn công khai. -->
-                        <a href="mailto:duongmn.dev@gmail.com"
-                            >duongmn.dev@gmail.com</a
-                        >
-                    </div>
+                    <h2>Liên hệ</h2>
+                    <dl>
+                        <dt>Email</dt>
+                        <dd>
+                            <a href="mailto:duongmn.dev@gmail.com"
+                                >duongmn.dev@gmail.com</a
+                            >
+                        </dd>
+                        <dt>Hỗ trợ</dt>
+                        <dd>
+                            Câu hỏi về ứng dụng, góp ý, báo lỗi hoặc yêu cầu
+                            liên quan đến dữ liệu cá nhân. Tôi sẽ phản hồi trong
+                            thời gian sớm nhất.
+                        </dd>
+                        <dt>Khu vực</dt>
+                        <dd>Việt Nam</dd>
+                    </dl>
                 </div>
             </section>
         </main>
 
         <footer>
-            <div class="wrap footer-inner">
+            <div class="wrap foot">
                 <span>© <span id="year">2026</span> Dương Nguyễn SoftLab</span>
-                <span>Made in Vietnam</span>
+                <a href="/privacy/ok-can.html">Chính sách quyền riêng tư</a>
             </div>
         </footer>
+
         <script>
             document.getElementById("year").textContent =
                 new Date().getFullYear();
